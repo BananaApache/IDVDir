@@ -1,14 +1,5 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title>IDV App</title>
-
-    <link
-      rel="shortcut icon"
-      href="https://tptp.org/CGIcons/IDV.png"
-      type="image/x-icon"
-    />
-
+  <body>
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script
       src="https://unpkg.com/@hpcc-js/wasm@1.20.1/dist/index.js"
@@ -1591,31 +1582,312 @@
 
       /*# sourceMappingURL=three-dots.css.map */
     </style>
-  </head>
-
-  <body>
     <div id="index">
-      <h1>Upload a File</h1>
+      <pre id="output" style="display: none">
+%------------------------------------------------------------------------------
+fof(f83,plain,
+    $false,
+    inference(subsumption_resolution,[],[f80,f29]) ).
+
+fof(f29,plain,
+    ~ killed(agatha,agatha),
+    inference(cnf_transformation,[],[f16]) ).
+
+fof(f16,plain,
+    ~ killed(agatha,agatha),
+    inference(flattening,[],[f15]) ).
+
+fof(f15,negated_conjecture,
+    ~ killed(agatha,agatha),
+    inference(negated_conjecture,[],[f14]) ).
+
+fof(f14,conjecture,
+    killed(agatha,agatha),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f80,plain,
+    killed(agatha,agatha),
+    inference(superposition,[],[f43,f76]) ).
+
+fof(f76,plain,
+    agatha = sK1,
+    inference(subsumption_resolution,[],[f71,f51]) ).
+
+fof(f51,plain,
+    ~ hates(butler,butler),
+    inference(superposition,[],[f39,f48]) ).
+
+fof(f48,plain,
+    butler = sK0(butler),
+    inference(resolution,[],[f47,f35]) ).
+
+fof(f35,plain,
+    ! [X0] :
+      ( hates(agatha,X0)
+      | butler = X0 ),
+    inference(cnf_transformation,[],[f19]) ).
+
+fof(f19,plain,
+    ! [X0] :
+      ( hates(agatha,X0)
+      | butler = X0 ),
+    inference(ennf_transformation,[],[f9]) ).
+
+fof(f9,axiom,
+    ! [X0] :
+      ( butler != X0
+     => hates(agatha,X0) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f47,plain,
+    ~ hates(agatha,sK0(butler)),
+    inference(resolution,[],[f38,f39]) ).
+
+fof(f38,plain,
+    ! [X0] :
+      ( hates(butler,X0)
+      | ~ hates(agatha,X0) ),
+    inference(cnf_transformation,[],[f22]) ).
+
+fof(f22,plain,
+    ! [X0] :
+      ( hates(butler,X0)
+      | ~ hates(agatha,X0) ),
+    inference(ennf_transformation,[],[f11]) ).
+
+fof(f11,axiom,
+    ! [X0] :
+      ( hates(agatha,X0)
+     => hates(butler,X0) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f39,plain,
+    ! [X0] : ~ hates(X0,sK0(X0)),
+    inference(cnf_transformation,[],[f26]) ).
+
+fof(f26,plain,
+    ! [X0] : ~ hates(X0,sK0(X0)),
+    inference(skolemisation,[status(esa),new_symbols(skolem,[sK0])],[f12,f25]) ).
+
+fof(f25,plain,
+    ! [X0] :
+      ( ? [X1] : ~ hates(X0,X1)
+     => ~ hates(X0,sK0(X0)) ),
+    introduced(choice_axiom,[]) ).
+
+fof(f12,axiom,
+    ! [X0] :
+    ? [X1] : ~ hates(X0,X1),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f71,plain,
+    ( hates(butler,butler)
+    | agatha = sK1 ),
+    inference(superposition,[],[f58,f69]) ).
+
+fof(f69,plain,
+    ( butler = sK1
+    | agatha = sK1 ),
+    inference(subsumption_resolution,[],[f68,f33]) ).
+
+fof(f33,plain,
+    agatha != butler,
+    inference(cnf_transformation,[],[f13]) ).
+
+fof(f13,axiom,
+    agatha != butler,
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f68,plain,
+    ( butler = sK1
+    | agatha = sK1
+    | agatha = butler ),
+    inference(resolution,[],[f65,f35]) ).
+
+fof(f65,plain,
+    ( ~ hates(agatha,agatha)
+    | butler = sK1
+    | agatha = sK1 ),
+    inference(resolution,[],[f60,f37]) ).
+
+fof(f37,plain,
+    ! [X0] :
+      ( ~ hates(charles,X0)
+      | ~ hates(agatha,X0) ),
+    inference(cnf_transformation,[],[f21]) ).
+
+fof(f21,plain,
+    ! [X0] :
+      ( ~ hates(charles,X0)
+      | ~ hates(agatha,X0) ),
+    inference(ennf_transformation,[],[f8]) ).
+
+fof(f8,axiom,
+    ! [X0] :
+      ( hates(agatha,X0)
+     => ~ hates(charles,X0) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f60,plain,
+    ( hates(charles,agatha)
+    | agatha = sK1
+    | butler = sK1 ),
+    inference(superposition,[],[f52,f56]) ).
+
+fof(f56,plain,
+    ( charles = sK1
+    | agatha = sK1
+    | butler = sK1 ),
+    inference(resolution,[],[f34,f42]) ).
+
+fof(f42,plain,
+    lives(sK1),
+    inference(cnf_transformation,[],[f28]) ).
+
+fof(f28,plain,
+    ( killed(sK1,agatha)
+    & lives(sK1) ),
+    inference(skolemisation,[status(esa),new_symbols(skolem,[sK1])],[f1,f27]) ).
+
+fof(f27,plain,
+    ( ? [X0] :
+        ( killed(X0,agatha)
+        & lives(X0) )
+   => ( killed(sK1,agatha)
+      & lives(sK1) ) ),
+    introduced(choice_axiom,[]) ).
+
+fof(f1,axiom,
+    ? [X0] :
+      ( killed(X0,agatha)
+      & lives(X0) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f34,plain,
+    ! [X0] :
+      ( ~ lives(X0)
+      | butler = X0
+      | agatha = X0
+      | charles = X0 ),
+    inference(cnf_transformation,[],[f18]) ).
+
+fof(f18,plain,
+    ! [X0] :
+      ( charles = X0
+      | butler = X0
+      | agatha = X0
+      | ~ lives(X0) ),
+    inference(flattening,[],[f17]) ).
+
+fof(f17,plain,
+    ! [X0] :
+      ( charles = X0
+      | butler = X0
+      | agatha = X0
+      | ~ lives(X0) ),
+    inference(ennf_transformation,[],[f5]) ).
+
+fof(f5,axiom,
+    ! [X0] :
+      ( lives(X0)
+     => ( charles = X0
+        | butler = X0
+        | agatha = X0 ) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f52,plain,
+    hates(sK1,agatha),
+    inference(resolution,[],[f41,f43]) ).
+
+fof(f41,plain,
+    ! [X0,X1] :
+      ( ~ killed(X0,X1)
+      | hates(X0,X1) ),
+    inference(cnf_transformation,[],[f24]) ).
+
+fof(f24,plain,
+    ! [X0,X1] :
+      ( hates(X0,X1)
+      | ~ killed(X0,X1) ),
+    inference(ennf_transformation,[],[f6]) ).
+
+fof(f6,axiom,
+    ! [X0,X1] :
+      ( killed(X0,X1)
+     => hates(X0,X1) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f58,plain,
+    hates(butler,sK1),
+    inference(resolution,[],[f49,f43]) ).
+
+fof(f49,plain,
+    ! [X0] :
+      ( ~ killed(X0,agatha)
+      | hates(butler,X0) ),
+    inference(resolution,[],[f40,f36]) ).
+
+fof(f36,plain,
+    ! [X0] :
+      ( richer(X0,agatha)
+      | hates(butler,X0) ),
+    inference(cnf_transformation,[],[f20]) ).
+
+fof(f20,plain,
+    ! [X0] :
+      ( hates(butler,X0)
+      | richer(X0,agatha) ),
+    inference(ennf_transformation,[],[f10]) ).
+
+fof(f10,axiom,
+    ! [X0] :
+      ( ~ richer(X0,agatha)
+     => hates(butler,X0) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f40,plain,
+    ! [X0,X1] :
+      ( ~ richer(X0,X1)
+      | ~ killed(X0,X1) ),
+    inference(cnf_transformation,[],[f23]) ).
+
+fof(f23,plain,
+    ! [X0,X1] :
+      ( ~ richer(X0,X1)
+      | ~ killed(X0,X1) ),
+    inference(ennf_transformation,[],[f7]) ).
+
+fof(f7,axiom,
+    ! [X0,X1] :
+      ( killed(X0,X1)
+     => ~ richer(X0,X1) ),
+    file('/export/starexec/sandbox/benchmark/theBenchmark.p',unknown) ).
+
+fof(f43,plain,
+    killed(sK1,agatha),
+    inference(cnf_transformation,[],[f28]) ).
+
+%------------------------------------------------------------------------------
+      </pre>
 
       <input type="file" name="fileUploadBtn" id="fileUploadBtn" />
-
-      <pre id="output" style="display: none"></pre>
-
       <button id="visualizeBtn" onclick="visualize()">Visualize</button>
-
       <script type="text/javascript">
-        document
-          .getElementById("fileUploadBtn")
-          .addEventListener("change", function () {
+        if (document.getElementById("output").textContent.trim().includes("PROOF_GOES_HERE")) {
+          document.getElementById("fileUploadBtn").addEventListener("change", function () {
             let fr = new FileReader();
             fr.onload = function () {
               document.getElementById("output").textContent = fr.result;
             };
-
             fr.readAsBinaryString(this.files[0]);
           });
-
+        } else {
+          document.getElementById("fileUploadBtn").style.display = "none";
+        }
+      </script>
+      <script type="text/javascript">
         function visualize() {
+//----Hide the button
           document.querySelector("#index").style.display = "none";
           document.querySelector("#idv").style.display = "flex";
           document.querySelector("#proofText").innerHTML =
@@ -1701,13 +1973,10 @@
               <hr />
               <ul>
                 <li>
-                  The Interactive Derivation Viewer (IDV) <br />was written at
-                  the <a href="https://miami.edu">University of Miami.</a>
+                  The Interactive Derivation Viewer (IDV) <br />was written as part of the
+                  <a href="https://tptp.org">TPTP World.</a>
                 </li>
-                <li>
-                  Daniel Li & Esteban Morales developed a standalone IDV to be
-                  distributed
-                </li>
+                <li> Daniel Li & Esteban Morales developed a standalone IDV.</li>
                 <li>Jack McKeown finished the conversion and deployment.</li>
                 <li>Jack McKeown adapted it for viewing intepretations.</li>
                 <li>Joe Masterjohn started the conversion to a web app.</li>
@@ -1735,7 +2004,6 @@
       <p id="proofText" style="display: none"></p>
 
       <script src="https://tptp.org/CGIFormData/IDVBundle.js"></script>
-      <!-- <script src="../js/bundle.js"></script> -->
       <script>
         window.interestScalingBool = false;
 
