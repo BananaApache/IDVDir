@@ -325,6 +325,7 @@ let proofToGV = function (nodes) {
     }
 
     gvLines.push("digraph G {");
+	gvLines.push('pad="0.5"');
 	gvLines.push('node [style=filled, fontname="JetBrains Mono", fontsize=10];');
     gvLines.push("newrank=\"true\"");
 
@@ -375,6 +376,9 @@ let proofToGV = function (nodes) {
     }
 
     gvLines.push("}");
+
+    console.log(gvLines.join('\n'))
+
     return gvLines.join('\n');
 }
 
